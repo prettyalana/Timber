@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E76592A72C86A68800C661D4 /* libsfml-audio.2.6.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E76592992C86A64100C661D4 /* libsfml-audio.2.6.1.dylib */; };
+		E76592AA2C86A68800C661D4 /* libsfml-graphics.2.6.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E765929C2C86A64100C661D4 /* libsfml-graphics.2.6.1.dylib */; };
+		E76592AD2C86A68800C661D4 /* libsfml-network.2.6.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E765929F2C86A64100C661D4 /* libsfml-network.2.6.1.dylib */; };
+		E76592B02C86A68800C661D4 /* libsfml-system.2.6.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E76592A22C86A64100C661D4 /* libsfml-system.2.6.1.dylib */; };
+		E76592B32C86A68800C661D4 /* libsfml-window.2.6.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E76592A52C86A64100C661D4 /* libsfml-window.2.6.1.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E765927C2C86A53900C661D4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E765927E2C86A53900C661D4 /* Timber */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Timber; sourceTree = BUILT_PRODUCTS_DIR; };
+		E76592892C86A64100C661D4 /* SFMLConfig.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = SFMLConfig.cmake; sourceTree = "<group>"; };
+		E765928A2C86A64100C661D4 /* SFMLConfigDependencies.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = SFMLConfigDependencies.cmake; sourceTree = "<group>"; };
+		E765928B2C86A64100C661D4 /* SFMLConfigVersion.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = SFMLConfigVersion.cmake; sourceTree = "<group>"; };
+		E765928C2C86A64100C661D4 /* SFMLSharedTargets.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = SFMLSharedTargets.cmake; sourceTree = "<group>"; };
+		E765928D2C86A64100C661D4 /* SFMLSharedTargets-release.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = "SFMLSharedTargets-release.cmake"; sourceTree = "<group>"; };
+		E76592902C86A64100C661D4 /* sfml-all.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-all.pc"; sourceTree = "<group>"; };
+		E76592912C86A64100C661D4 /* sfml-audio.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-audio.pc"; sourceTree = "<group>"; };
+		E76592922C86A64100C661D4 /* sfml-graphics.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-graphics.pc"; sourceTree = "<group>"; };
+		E76592932C86A64100C661D4 /* sfml-network.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-network.pc"; sourceTree = "<group>"; };
+		E76592942C86A64100C661D4 /* sfml-system.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-system.pc"; sourceTree = "<group>"; };
+		E76592952C86A64100C661D4 /* sfml-window.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-window.pc"; sourceTree = "<group>"; };
+		E76592972C86A64100C661D4 /* libsfml-audio.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-audio.dylib"; sourceTree = "<group>"; };
+		E76592982C86A64100C661D4 /* libsfml-audio.2.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-audio.2.6.dylib"; sourceTree = "<group>"; };
+		E76592992C86A64100C661D4 /* libsfml-audio.2.6.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-audio.2.6.1.dylib"; sourceTree = "<group>"; };
+		E765929A2C86A64100C661D4 /* libsfml-graphics.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-graphics.dylib"; sourceTree = "<group>"; };
+		E765929B2C86A64100C661D4 /* libsfml-graphics.2.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-graphics.2.6.dylib"; sourceTree = "<group>"; };
+		E765929C2C86A64100C661D4 /* libsfml-graphics.2.6.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-graphics.2.6.1.dylib"; sourceTree = "<group>"; };
+		E765929D2C86A64100C661D4 /* libsfml-network.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-network.dylib"; sourceTree = "<group>"; };
+		E765929E2C86A64100C661D4 /* libsfml-network.2.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-network.2.6.dylib"; sourceTree = "<group>"; };
+		E765929F2C86A64100C661D4 /* libsfml-network.2.6.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-network.2.6.1.dylib"; sourceTree = "<group>"; };
+		E76592A02C86A64100C661D4 /* libsfml-system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-system.dylib"; sourceTree = "<group>"; };
+		E76592A12C86A64100C661D4 /* libsfml-system.2.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-system.2.6.dylib"; sourceTree = "<group>"; };
+		E76592A22C86A64100C661D4 /* libsfml-system.2.6.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-system.2.6.1.dylib"; sourceTree = "<group>"; };
+		E76592A32C86A64100C661D4 /* libsfml-window.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-window.dylib"; sourceTree = "<group>"; };
+		E76592A42C86A64100C661D4 /* libsfml-window.2.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-window.2.6.dylib"; sourceTree = "<group>"; };
+		E76592A52C86A64100C661D4 /* libsfml-window.2.6.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = "libsfml-window.2.6.1.dylib"; sourceTree = "<group>"; };
+		E76592B62C86A68900C661D4 /* sfml-all.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-all.pc"; sourceTree = "<group>"; };
+		E76592B72C86A68900C661D4 /* sfml-audio.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-audio.pc"; sourceTree = "<group>"; };
+		E76592B82C86A68900C661D4 /* sfml-graphics.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-graphics.pc"; sourceTree = "<group>"; };
+		E76592B92C86A68900C661D4 /* sfml-network.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-network.pc"; sourceTree = "<group>"; };
+		E76592BA2C86A68900C661D4 /* sfml-system.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-system.pc"; sourceTree = "<group>"; };
+		E76592BB2C86A68900C661D4 /* sfml-window.pc */ = {isa = PBXFileReference; lastKnownFileType = text; path = "sfml-window.pc"; sourceTree = "<group>"; };
+		E76592BD2C86A68900C661D4 /* SFMLConfig.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = SFMLConfig.cmake; sourceTree = "<group>"; };
+		E76592BE2C86A68900C661D4 /* SFMLConfigDependencies.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = SFMLConfigDependencies.cmake; sourceTree = "<group>"; };
+		E76592BF2C86A68900C661D4 /* SFMLConfigVersion.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = SFMLConfigVersion.cmake; sourceTree = "<group>"; };
+		E76592C02C86A68900C661D4 /* SFMLSharedTargets.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = SFMLSharedTargets.cmake; sourceTree = "<group>"; };
+		E76592C12C86A68900C661D4 /* SFMLSharedTargets-release.cmake */ = {isa = PBXFileReference; lastKnownFileType = text; path = "SFMLSharedTargets-release.cmake"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E76592802C86A53900C661D4 /* Timber */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Timber;
+			sourceTree = "<group>";
+		};
+		E76592DA2C86AB3C00C661D4 /* fonts */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		E76592FB2C86AB5B00C661D4 /* graphics */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = graphics;
+			sourceTree = "<group>";
+		};
+		E76592FF2C86AB5D00C661D4 /* sounds */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = sounds;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E765927B2C86A53900C661D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E76592A72C86A68800C661D4 /* libsfml-audio.2.6.1.dylib in Frameworks */,
+				E76592AA2C86A68800C661D4 /* libsfml-graphics.2.6.1.dylib in Frameworks */,
+				E76592AD2C86A68800C661D4 /* libsfml-network.2.6.1.dylib in Frameworks */,
+				E76592B02C86A68800C661D4 /* libsfml-system.2.6.1.dylib in Frameworks */,
+				E76592B32C86A68800C661D4 /* libsfml-window.2.6.1.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E76592752C86A53900C661D4 = {
+			isa = PBXGroup;
+			children = (
+				E76592802C86A53900C661D4 /* Timber */,
+				E76592882C86A64100C661D4 /* Frameworks */,
+				E765927F2C86A53900C661D4 /* Products */,
+				E76592DA2C86AB3C00C661D4 /* fonts */,
+				E76592FB2C86AB5B00C661D4 /* graphics */,
+				E76592FF2C86AB5D00C661D4 /* sounds */,
+			);
+			sourceTree = "<group>";
+		};
+		E765927F2C86A53900C661D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E765927E2C86A53900C661D4 /* Timber */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E76592882C86A64100C661D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E76592C32C86A68900C661D4 /* cmake */,
+				E76592BC2C86A68900C661D4 /* pkgconfig */,
+				E76592A62C86A64100C661D4 /* lib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E765928E2C86A64100C661D4 /* SFML */ = {
+			isa = PBXGroup;
+			children = (
+				E76592892C86A64100C661D4 /* SFMLConfig.cmake */,
+				E765928A2C86A64100C661D4 /* SFMLConfigDependencies.cmake */,
+				E765928B2C86A64100C661D4 /* SFMLConfigVersion.cmake */,
+				E765928C2C86A64100C661D4 /* SFMLSharedTargets.cmake */,
+				E765928D2C86A64100C661D4 /* SFMLSharedTargets-release.cmake */,
+			);
+			path = SFML;
+			sourceTree = "<group>";
+		};
+		E765928F2C86A64100C661D4 /* cmake */ = {
+			isa = PBXGroup;
+			children = (
+				E765928E2C86A64100C661D4 /* SFML */,
+			);
+			path = cmake;
+			sourceTree = "<group>";
+		};
+		E76592962C86A64100C661D4 /* pkgconfig */ = {
+			isa = PBXGroup;
+			children = (
+				E76592902C86A64100C661D4 /* sfml-all.pc */,
+				E76592912C86A64100C661D4 /* sfml-audio.pc */,
+				E76592922C86A64100C661D4 /* sfml-graphics.pc */,
+				E76592932C86A64100C661D4 /* sfml-network.pc */,
+				E76592942C86A64100C661D4 /* sfml-system.pc */,
+				E76592952C86A64100C661D4 /* sfml-window.pc */,
+			);
+			path = pkgconfig;
+			sourceTree = "<group>";
+		};
+		E76592A62C86A64100C661D4 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				E765928F2C86A64100C661D4 /* cmake */,
+				E76592962C86A64100C661D4 /* pkgconfig */,
+				E76592972C86A64100C661D4 /* libsfml-audio.dylib */,
+				E76592982C86A64100C661D4 /* libsfml-audio.2.6.dylib */,
+				E76592992C86A64100C661D4 /* libsfml-audio.2.6.1.dylib */,
+				E765929A2C86A64100C661D4 /* libsfml-graphics.dylib */,
+				E765929B2C86A64100C661D4 /* libsfml-graphics.2.6.dylib */,
+				E765929C2C86A64100C661D4 /* libsfml-graphics.2.6.1.dylib */,
+				E765929D2C86A64100C661D4 /* libsfml-network.dylib */,
+				E765929E2C86A64100C661D4 /* libsfml-network.2.6.dylib */,
+				E765929F2C86A64100C661D4 /* libsfml-network.2.6.1.dylib */,
+				E76592A02C86A64100C661D4 /* libsfml-system.dylib */,
+				E76592A12C86A64100C661D4 /* libsfml-system.2.6.dylib */,
+				E76592A22C86A64100C661D4 /* libsfml-system.2.6.1.dylib */,
+				E76592A32C86A64100C661D4 /* libsfml-window.dylib */,
+				E76592A42C86A64100C661D4 /* libsfml-window.2.6.dylib */,
+				E76592A52C86A64100C661D4 /* libsfml-window.2.6.1.dylib */,
+			);
+			name = lib;
+			path = ../../../../opt/homebrew/Cellar/sfml/2.6.1/lib;
+			sourceTree = "<group>";
+		};
+		E76592BC2C86A68900C661D4 /* pkgconfig */ = {
+			isa = PBXGroup;
+			children = (
+				E76592B62C86A68900C661D4 /* sfml-all.pc */,
+				E76592B72C86A68900C661D4 /* sfml-audio.pc */,
+				E76592B82C86A68900C661D4 /* sfml-graphics.pc */,
+				E76592B92C86A68900C661D4 /* sfml-network.pc */,
+				E76592BA2C86A68900C661D4 /* sfml-system.pc */,
+				E76592BB2C86A68900C661D4 /* sfml-window.pc */,
+			);
+			name = pkgconfig;
+			path = ../../../../opt/homebrew/Cellar/sfml/2.6.1/lib/pkgconfig;
+			sourceTree = "<group>";
+		};
+		E76592C22C86A68900C661D4 /* SFML */ = {
+			isa = PBXGroup;
+			children = (
+				E76592BD2C86A68900C661D4 /* SFMLConfig.cmake */,
+				E76592BE2C86A68900C661D4 /* SFMLConfigDependencies.cmake */,
+				E76592BF2C86A68900C661D4 /* SFMLConfigVersion.cmake */,
+				E76592C02C86A68900C661D4 /* SFMLSharedTargets.cmake */,
+				E76592C12C86A68900C661D4 /* SFMLSharedTargets-release.cmake */,
+			);
+			path = SFML;
+			sourceTree = "<group>";
+		};
+		E76592C32C86A68900C661D4 /* cmake */ = {
+			isa = PBXGroup;
+			children = (
+				E76592C22C86A68900C661D4 /* SFML */,
+			);
+			name = cmake;
+			path = ../../../../opt/homebrew/Cellar/sfml/2.6.1/lib/cmake;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E765927D2C86A53900C661D4 /* Timber */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E76592852C86A53900C661D4 /* Build configuration list for PBXNativeTarget "Timber" */;
+			buildPhases = (
+				E765927A2C86A53900C661D4 /* Sources */,
+				E765927B2C86A53900C661D4 /* Frameworks */,
+				E765927C2C86A53900C661D4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E76592802C86A53900C661D4 /* Timber */,
+				E76592DA2C86AB3C00C661D4 /* fonts */,
+				E76592FB2C86AB5B00C661D4 /* graphics */,
+				E76592FF2C86AB5D00C661D4 /* sounds */,
+			);
+			name = Timber;
+			packageProductDependencies = (
+			);
+			productName = Timber;
+			productReference = E765927E2C86A53900C661D4 /* Timber */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E76592762C86A53900C661D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					E765927D2C86A53900C661D4 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = E76592792C86A53900C661D4 /* Build configuration list for PBXProject "Timber" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E76592752C86A53900C661D4;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E765927F2C86A53900C661D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E765927D2C86A53900C661D4 /* Timber */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E765927A2C86A53900C661D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E76592832C86A53900C661D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E76592842C86A53900C661D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E76592862C86A53900C661D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BFUV573K7L;
+				ENABLE_HARDENED_RUNTIME = NO;
+				HEADER_SEARCH_PATHS = /opt/homebrew/opt/sfml/include;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[arch=*]" = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					/opt/homebrew/opt/sfml/lib,
+					/opt/homebrew/Cellar/sfml/2.6.1/lib,
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /opt/homebrew/opt/sfml/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E76592872C86A53900C661D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BFUV573K7L;
+				ENABLE_HARDENED_RUNTIME = NO;
+				HEADER_SEARCH_PATHS = /opt/homebrew/opt/sfml/include;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					/opt/homebrew/opt/sfml/lib,
+					/opt/homebrew/Cellar/sfml/2.6.1/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E76592792C86A53900C661D4 /* Build configuration list for PBXProject "Timber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76592832C86A53900C661D4 /* Debug */,
+				E76592842C86A53900C661D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E76592852C86A53900C661D4 /* Build configuration list for PBXNativeTarget "Timber" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E76592862C86A53900C661D4 /* Debug */,
+				E76592872C86A53900C661D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E76592762C86A53900C661D4 /* Project object */;
+}
