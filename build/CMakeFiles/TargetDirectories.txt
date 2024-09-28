@@ -1,0 +1,2 @@
+/Users/alana/alana-fullstackdev/Timber/build/CMakeFiles/edit_cache.dir
+/Users/alana/alana-fullstackdev/Timber/build/CMakeFiles/rebuild_cache.dir

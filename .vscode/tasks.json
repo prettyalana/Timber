@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C/C++: clang build active file",
+            "type": "shell",
+            "command": "/usr/bin/clang++",
+            "args": [
+                "-fcolor-diagnostics",
+                "-fansi-escape-codes",
+                "-g",
+                "-I/opt/homebrew/include",  
+                "-L/opt/homebrew/lib",      
+                "${workspaceFolder}/Timber/main.cpp",  
+                "-o",
+                "${workspaceFolder}/main", 
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system",
+                "-lsfml-audio",            
+                "-lsfml-network"           
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"  
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Task configured for building SFML projects."
+        }
+    ]
+}
