@@ -6,9 +6,9 @@
             "type": "cppdbg",
             "request": "launch",
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/bin/",
             "environment": [],
-            "program": "${workspaceFolder}/main",  
+            "program": "${workspaceFolder}/bin/app",
             "MIMode": "lldb",
             "targetArchitecture": "arm64",
             "externalConsole": false
