@@ -11,7 +11,7 @@
                 "-g",
                 "-I/opt/homebrew/include",  
                 "-L/opt/homebrew/lib",      
-                "${workspaceFolder}/src/main.cpp",  
+                "${workspaceFolder}/Timber/main.cpp",  
                 "-o",
                 "${workspaceFolder}/main", 
                 "-lsfml-graphics",
