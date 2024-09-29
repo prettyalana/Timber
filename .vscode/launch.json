@@ -6,9 +6,9 @@
             "type": "cppdbg",
             "request": "launch",
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/Timber/",
+            "cwd": "${workspaceFolder}/bin/",
             "environment": [],
-            "program": "${workspaceFolder}/bin/app",
+            "program": "/Users/alana/alana-fullstackdev/Timber/bin/app",
             "MIMode": "lldb",
             "targetArchitecture": "arm64",
             "externalConsole": false
