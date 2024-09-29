@@ -1,3 +1,9 @@
 {
-    "cSpell.words": ["SFML"]
+    "cSpell.words": [
+        "SFML"
+    ],
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "iostream": "cpp"
+    }
 }
