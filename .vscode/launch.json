@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/bin/",
+            "cwd": "${workspaceFolder}/Timber/",
             "environment": [],
             "program": "${workspaceFolder}/bin/app",
             "MIMode": "lldb",
