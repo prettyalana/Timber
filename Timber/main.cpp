@@ -53,6 +53,23 @@ int main()
     spriteTree.setTexture(textureTree);
     spriteTree.setPosition(TREE_HORIZONTAL_POSITION, TREE_VERTICAL_POSITION);
     
+    // Prepare the bee
+    Texture textureBee;
+    if(!textureBee.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/bee.png")) {
+        std::cerr << "Failed to load image: graphics/bee.png" << std::endl;
+        return -1; 
+    }
+    Sprite spriteBee;
+    spriteBee.setTexture(textureBee);
+    spriteBee.setPosition(0, 800);
+
+    // Is the bee constantly moving?
+    bool activeBee = false;
+
+    // How fast can the bee fly
+    float beeSpeed = 0.0f;
+
+    
     // Main game loop
     while (window.isOpen()) {
         Event event;
