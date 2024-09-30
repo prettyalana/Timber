@@ -47,12 +47,13 @@ ExportOptions.plist
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata/
+Timber.xcodeproj/project.xcworkspace/xcuserdata/
 
 ## Other
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
-
-Timber.xcodeproj/project.xcworkspace/xcuserdata/
 .DS_Store
+
+## Notes
+cpp_notes/
