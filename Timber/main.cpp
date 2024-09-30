@@ -98,9 +98,9 @@ int main()
     bool cloud3Active = false;
 
     // How fast is each cloud?
-    float cloud1Active = 0.0f;
-    float cloud2Active = 0.0f;
-    float cloud3Active = 0.0f;
+    float cloud1Speed = 0.0f;
+    float cloud2Speed = 0.0f;
+    float cloud3Speed = 0.0f;
     
     // Main game loop
     while (window.isOpen()) {
@@ -120,6 +120,18 @@ int main()
         
         // Draw our game scene here
         window.draw(spriteBackground);
+
+        // Draw the clouds
+        window.draw(spriteCloud1);
+        window.draw(spriteCloud2);
+        window.draw(spriteCloud3);
+
+        // Draw the tree
+        window.draw(spriteTree);
+
+        // Draw the bee
+        window.draw(spriteBee);
+
         
         // Show everything we just drew window.display();
         window.display();
