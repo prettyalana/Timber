@@ -21,50 +21,53 @@ int main()
 {
     // Create a video mode object
     VideoMode vm(VideoMode::getDesktopMode()); // Fullscreen mode
-    
+
     // Create and open a window for the game
     RenderWindow window(vm, "Timber!!!");
-    
+
     // Create a texture to hold a graphic on the GPU
     Texture textureBackground;
-    
+
     // Load a graphic into the texture
-    if (!textureBackground.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/background.png")) {
+    if (!textureBackground.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/background.png"))
+    {
         std::cerr << "Failed to load image: graphics/background.png" << std::endl;
         return -1; // Exit if image loading fails
     }
-    
+
     // Create a sprite spriteBackground;
     Sprite spriteBackground;
-    
+
     // Attach the texture to the sprite spriteBackground.
     spriteBackground.setTexture(textureBackground);
-    
+
     // Set the spriteBackground to cover the screen sppriteBackground.
     spriteBackground.setPosition(0, 0);
 
-    // Make a tree sprite 
+    // Make a tree sprite
     Texture textureTree;
-    if(!textureTree.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/tree.png")) {
+    if (!textureTree.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/tree.png"))
+    {
         std::cerr << "Failed to load image: graphics/tree.png" << std::endl;
-        return -1; 
+        return -1;
     }
     Sprite spriteTree;
     spriteTree.setTexture(textureTree);
     spriteTree.setPosition(TREE_HORIZONTAL_POSITION, TREE_VERTICAL_POSITION);
-    
+
     // Prepare the bee
     Texture textureBee;
-    if(!textureBee.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/bee.png")) {
+    if (!textureBee.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/bee.png"))
+    {
         std::cerr << "Failed to load image: graphics/bee.png" << std::endl;
-        return -1; 
+        return -1;
     }
     Sprite spriteBee;
     spriteBee.setTexture(textureBee);
     spriteBee.setPosition(100, 600);
 
     // Is the bee constantly moving?
-    bool activeBee = false;
+    bool beeActive = false;
 
     // How fast can the bee fly
     float beeSpeed = 0.0f;
@@ -73,9 +76,10 @@ int main()
     Texture textureCloud;
 
     // Load 1 new texture
-    if(!textureCloud.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/cloud.png")) {
+    if (!textureCloud.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/cloud.png"))
+    {
         std::cerr << "Failed to load image: graphics/cloud.png" << std::endl;
-        return -1; 
+        return -1;
     }
 
     // Create 3 new sprites with the textureCloud
@@ -86,8 +90,8 @@ int main()
     spriteCloud2.setTexture(textureCloud);
     spriteCloud3.setTexture(textureCloud);
 
-    // Position clouds on the left side of the screen 
-    // at different heights 
+    // Position clouds on the left side of the screen
+    // at different heights
     spriteCloud1.setPosition(0, 0);
     spriteCloud2.setPosition(0, 150);
     spriteCloud3.setPosition(0, 300);
@@ -98,26 +102,64 @@ int main()
     bool cloud3Active = false;
 
     // How fast is each cloud?
-    float cloud1Speed = 0.0f;
-    float cloud2Speed = 0.0f;
-    float cloud3Speed = 0.0f;
-    
+    float cloud1Speed = 0;
+    float cloud2Speed = 0;
+    float cloud3Speed = 0;
+
+    // Variables to control time itself
+    // Declare an object of the Clock type and name it clock
+    Clock clock;
+
     // Main game loop
-    while (window.isOpen()) {
+    while (window.isOpen())
+    {
         Event event;
-        while (window.pollEvent(event)) {
+        while (window.pollEvent(event))
+        {
             // Handle the player input
-            if (event.type == Event::Closed)
+            if (event.type == Event::Closed || Keyboard::isKeyPressed(Keyboard::Escape))
                 window.close();
         }
-        
+
         // Update the scene
-        
+
+        // Measure time
+        // Declare an object of the Time type and name it dt and use it to store the value returned by the clock.restart() function
+        Time dt = clock.restart();
+
+        // Setup the bee
+        if (!beeActive)
+        {
+            // How fast is the bee?
+            srand((int)time(0));
+            beeSpeed = (rand() % 200) + 200;
+
+            // How high is the bee
+            srand((int)time(0) * 10);
+            float height = (rand() % 500) + 500;
+            spriteBee.setPosition(2000, height);
+            beeActive = true;
+        }
+        else
+        {
+            // Move the bee
+            spriteBee.setPosition(
+            spriteBee.getPosition().x -
+            (beeSpeed * dt.asSeconds()),
+            spriteBee.getPosition().y);
+
+            // Has the bee reached the left-hand edge of the screen?
+            if(spriteBee.getPosition().x < -100) 
+            {
+                beeActive = false;
+            }
+        }
+
         // Draw the scene
-        
+
         // Clear everything from the last frame window.clear();
         window.clear();
-        
+
         // Draw our game scene here
         window.draw(spriteBackground);
 
@@ -132,12 +174,9 @@ int main()
         // Draw the bee
         window.draw(spriteBee);
 
-        
         // Show everything we just drew window.display();
         window.display();
     }
-    
+
     return 0;
 }
-
-
