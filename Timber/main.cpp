@@ -13,8 +13,8 @@
 using namespace sf;
 
 // Declare constant variables for the tree's position
-const float TREE_HORIZONTAL_POSITION = 810;
-const float TREE_VERTICAL_POSITION = 0;
+const float TREE_HORIZONTAL_POSITION = 570;
+const float TREE_VERTICAL_POSITION = -200;
 
 int main()
 // This is where the game starts from int main()
@@ -61,7 +61,7 @@ int main()
     }
     Sprite spriteBee;
     spriteBee.setTexture(textureBee);
-    spriteBee.setPosition(0, 800);
+    spriteBee.setPosition(100, 600);
 
     // Is the bee constantly moving?
     bool activeBee = false;
@@ -89,8 +89,8 @@ int main()
     // Position clouds on the left side of the screen 
     // at different heights 
     spriteCloud1.setPosition(0, 0);
-    spriteCloud2.setPosition(0, 250);
-    spriteCloud3.setPosition(0, 500);
+    spriteCloud2.setPosition(0, 150);
+    spriteCloud3.setPosition(0, 300);
 
     // Are the clouds currently on the screen?
     bool cloud1Active = false;
