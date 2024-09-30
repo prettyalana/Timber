@@ -12,6 +12,10 @@
 // Make code easier to type with "using namespace" using namespace sf;
 using namespace sf;
 
+// Declare constant variables for the tree's position
+const float TREE_HORIZONTAL_POSITION = 810;
+const float TREE_VERTICAL_POSITION = 0;
+
 int main()
 // This is where the game starts from int main()
 {
@@ -38,6 +42,16 @@ int main()
     
     // Set the spriteBackground to cover the screen sppriteBackground.
     spriteBackground.setPosition(0, 0);
+
+    // Make a tree sprite 
+    Texture textureTree;
+    if(!textureTree.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/tree.png")) {
+        std::cerr << "Failed to load image: graphics/tree.png" << std::endl;
+        return -1; 
+    }
+    Sprite spriteTree;
+    spriteTree.setTexture(textureTree);
+    spriteTree.setPosition(TREE_HORIZONTAL_POSITION, TREE_VERTICAL_POSITION);
     
     // Main game loop
     while (window.isOpen()) {
