@@ -8,8 +8,9 @@
 // Include important libraries here
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <string>
 
-// Make code easier to type with "using namespace" using namespace sf;
+// Make code easier to type with "using namespace";
 using namespace sf;
 
 // Declare constant variables for the tree's position
@@ -19,6 +20,11 @@ const float TREE_VERTICAL_POSITION = -200;
 int main()
 // This is where the game starts from int main()
 {
+    std::string playerName = "Player1";
+    std::string message = "Welcome to the game, " + playerName + "!";
+    std::cout << message << std::endl;
+
+
     // Create a video mode object
     VideoMode vm(VideoMode::getDesktopMode()); // Fullscreen mode
 
