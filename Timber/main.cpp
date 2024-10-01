@@ -12,6 +12,7 @@
 
 // Make code easier to type with "using namespace";
 using namespace sf;
+using namespace std;
 
 // Declare constant variables for the tree's position
 const float TREE_HORIZONTAL_POSITION = 570;
@@ -20,9 +21,9 @@ const float TREE_VERTICAL_POSITION = -200;
 int main()
 // This is where the game starts from int main()
 {
-    std::string playerName = "Player1";
-    std::string message = "Welcome to the game, " + playerName + "!";
-    std::cout << message << std::endl;
+    string playerName = "Player1";
+    string message = "Welcome to the game, " + playerName + "!";
+    cout << message << endl;
 
 
     // Create a video mode object
@@ -37,7 +38,7 @@ int main()
     // Load a graphic into the texture
     if (!textureBackground.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/background.png"))
     {
-        std::cerr << "Failed to load image: graphics/background.png" << std::endl;
+        cerr << "Failed to load image: graphics/background.png" << endl;
         return -1; // Exit if image loading fails
     }
 
@@ -54,7 +55,7 @@ int main()
     Texture textureTree;
     if (!textureTree.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/tree.png"))
     {
-        std::cerr << "Failed to load image: graphics/tree.png" << std::endl;
+        cerr << "Failed to load image: graphics/tree.png" << endl;
         return -1;
     }
     Sprite spriteTree;
@@ -65,7 +66,7 @@ int main()
     Texture textureBee;
     if (!textureBee.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/bee.png"))
     {
-        std::cerr << "Failed to load image: graphics/bee.png" << std::endl;
+        cerr << "Failed to load image: graphics/bee.png" << endl;
         return -1;
     }
     Sprite spriteBee;
@@ -84,7 +85,7 @@ int main()
     // Load 1 new texture
     if (!textureCloud.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/cloud.png"))
     {
-        std::cerr << "Failed to load image: graphics/cloud.png" << std::endl;
+        cerr << "Failed to load image: graphics/cloud.png" << endl;
         return -1;
     }
 
