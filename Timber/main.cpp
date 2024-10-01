@@ -113,6 +113,18 @@ int main()
     // Declare an object of the Clock type and name it clock
     Clock clock;
 
+    // Time bar 
+    RectangleShape timeBar;
+    float timeBarStartWidth = 400;
+    float timeBarHeight = 50;
+    timeBar.setSize(Vector2(timeBarStartWidth, timeBarHeight));
+    timeBar.setFillColor(Color::Red);
+    timeBar.setPosition((1440 / 2) - timeBarStartWidth / 2, 750);
+
+    Time gameTimeTotal;
+    float timeRemaining = 6.0f;
+    float timeBarWidthPerSecond = timeBarStartWidth / timeRemaining;
+
     // Track whether game is running
     bool paused = true;
 
@@ -162,7 +174,7 @@ int main()
         while (window.pollEvent(event))
         {
             // Handle the player input
-            if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape)
+            if (event.type == Event::Closed || event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape)
                 window.close();
         }
 
@@ -170,6 +182,10 @@ int main()
         if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Return)
         {
             paused = false;
+
+            // Reset the time and the score 
+            score = 0;
+            timeRemaining = 6;
         }
 
         // Update the scene
@@ -181,6 +197,27 @@ int main()
         // Measure time
         // Declare an object of the Time type and name it dt and use it to store the value returned by the clock.restart() function
         Time dt = clock.restart();
+
+        // Subtract from the amount of time remaining 
+        timeRemaining -= dt.asSeconds();
+
+        // resize up the time bar 
+        timeBar.setSize(Vector2f(timeBarWidthPerSecond * 
+        timeRemaining, timeBarHeight));
+
+        if (timeRemaining <= 0.0f) {
+            // Pause the game
+            paused = true;
+
+            // Change the message shown to the player 
+            messageText.setString("Out of time!!");
+
+            // Reposition the text based on the new size
+            FloatRect textRect = messageText.getLocalBounds();
+            messageText.setOrigin(textRect.left + textRect.width / 2.0f,
+            textRect.top +
+            textRect.height / 2.0f);
+        }
 
         // Setup the bee
         if (!beeActive)
@@ -324,6 +361,9 @@ int main()
 
         // Draw the score 
         window.draw(scoreText);
+
+        // Draw the timebar 
+        window.draw(timeBar);
 
         if (paused) 
         {
