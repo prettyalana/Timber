@@ -9,6 +9,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <string>
+#include <sstream>
 
 // Make code easier to type with "using namespace";
 using namespace sf;
@@ -21,11 +22,6 @@ const float TREE_VERTICAL_POSITION = -200;
 int main()
 // This is where the game starts from int main()
 {
-    string playerName = "Player1";
-    string message = "Welcome to the game, " + playerName + "!";
-    cout << message << endl;
-
-
     // Create a video mode object
     VideoMode vm(VideoMode::getDesktopMode()); // Fullscreen mode
 
@@ -119,6 +115,45 @@ int main()
 
     // Track whether game is running
     bool paused = true;
+
+    // Draw some text 
+    int score = 0;
+
+    // SFML Text object
+    Text messageText;
+    Text scoreText;
+
+    // Choose a font
+    Font font;
+
+    font.loadFromFile("/Users/alana/alana-fullstackdev/Timber/fonts/KOMIKAP_.ttf");
+
+    // Set the font to our text object 
+    messageText.setFont(font);
+    scoreText.setFont(font);
+
+    // Set the font to our message
+    messageText.setString("Press enter to start!");
+    scoreText.setString("Score = 0");
+
+    // Assign a size and make it really big
+    messageText.setCharacterSize(80);
+    scoreText.setCharacterSize(50);
+
+    // Choose a color
+    messageText.setFillColor(Color::White);
+    scoreText.setFillColor(Color::White);
+
+    // Position the text 
+    FloatRect textRect = messageText.getLocalBounds();
+
+    messageText.setOrigin(textRect.left + 
+    textRect.width / 2.0f, 
+    textRect.top +
+    textRect.height / 2.0f);
+
+    messageText.setPosition(1920 / 2.5f,1080 / 2.5f);
+    scoreText.setPosition(20, 20);
 
     // Main game loop
     while (window.isOpen())
@@ -262,6 +297,12 @@ int main()
         }
         } // End if(!paused)
 
+        // Update the score text 
+        std::stringstream ss;
+        ss << "Score = " << score;
+        scoreText.setString(ss.str());
+
+
         // Draw the scene
 
         // Clear everything from the last frame window.clear();
@@ -280,6 +321,15 @@ int main()
 
         // Draw the bee
         window.draw(spriteBee);
+
+        // Draw the score 
+        window.draw(scoreText);
+
+        if (paused) 
+        {
+            // Draw our message
+            window.draw(messageText);
+        }
 
         // Show everything we just drew window.display();
         window.display();
