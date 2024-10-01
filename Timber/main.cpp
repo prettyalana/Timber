@@ -110,6 +110,9 @@ int main()
     // Declare an object of the Clock type and name it clock
     Clock clock;
 
+    // Track whether game is running
+    bool paused = true;
+
     // Main game loop
     while (window.isOpen())
     {
@@ -117,11 +120,21 @@ int main()
         while (window.pollEvent(event))
         {
             // Handle the player input
-            if (event.type == Event::Closed || Keyboard::isKeyPressed(Keyboard::Escape))
+            if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape)
                 window.close();
         }
 
+        // Start the game
+        if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Return)
+        {
+            paused = false;
+        }
+
         // Update the scene
+        
+        if (!paused)
+        {
+            
 
         // Measure time
         // Declare an object of the Time type and name it dt and use it to store the value returned by the clock.restart() function
@@ -240,6 +253,7 @@ int main()
                 cloud3Active = false;
             }
         }
+        } // End if(!paused)
 
         // Draw the scene
 
