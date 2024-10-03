@@ -192,11 +192,6 @@ int main()
 
         if (!paused)
         {
-            
-            
-
-
-
             // Measure time
             // Declare an object of the Time type and name it dt and use it to store the value returned by the clock.restart() function
             Time dt = clock.restart();
