@@ -15,9 +15,6 @@
 using namespace sf;
 using namespace std;
 
-// Function declaration
-void updateBranches(int seed);
-
 // Declare a constant int called NUM_BRANCHES and set the value to 6
 const int NUM_BRANCHES = 6;
 
@@ -31,7 +28,33 @@ enum class side {LEFT, RIGHT, NONE};
 
 // initialize an array of sideTypes that stores 6 values 
 // Each value is the type side and can be hold the values LEFT, RIGHT, or NONE
-side branchPositions[NUM_BRANCHES];   
+side branchPositions[NUM_BRANCHES]; 
+
+// Function declaration
+void updateBranches(int seed)
+{
+    // Move all the branches down one place
+    for(int j = NUM_BRANCHES - 1; j > 0; j--) {
+        branchPositions[j] = branchPositions[j - 1];
+    }
+
+    // Spawn a new branch at position 0
+    // LEFT, RIGHT, or NONE
+    srand((int)time(0)+seed);
+    int r = (rand() % 5);
+
+    switch(r) {
+        case 0:
+            branchPositions[0] = side::LEFT;
+            break;
+        case 1: 
+            branchPositions[1] = side::RIGHT;
+            break;
+        default:
+            branchPositions[0] = side::NONE;
+            break;
+    }
+}
 
 // Declare constant variables for the tree's position
 const float TREE_HORIZONTAL_POSITION = 570;
