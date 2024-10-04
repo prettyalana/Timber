@@ -15,6 +15,24 @@
 using namespace sf;
 using namespace std;
 
+// Function declaration
+void updateBranches(int seed);
+
+// Declare a constant int called NUM_BRANCHES and set the value to 6
+const int NUM_BRANCHES = 6;
+
+// Declare an array of Sprite objects called branches 
+Sprite branches[NUM_BRANCHES]; // Stores 6 values
+
+// Where is the player/branch?
+// Left or Right
+// Declare an enum called side with three possible values
+enum class side {LEFT, RIGHT, NONE};
+
+// initialize an array of sideTypes that stores 6 values 
+// Each value is the type side and can be hold the values LEFT, RIGHT, or NONE
+side branchPositions[NUM_BRANCHES];   
+
 // Declare constant variables for the tree's position
 const float TREE_HORIZONTAL_POSITION = 570;
 const float TREE_VERTICAL_POSITION = -200;
