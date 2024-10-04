@@ -413,6 +413,12 @@ int main()
         window.draw(spriteCloud2);
         window.draw(spriteCloud3);
 
+        // Draw the branches 
+        for (int i = 0; i < NUM_BRANCHES; i++) 
+        {
+            window.draw(branches[i]);
+        }
+
         // Draw the tree
         window.draw(spriteTree);
 
