@@ -185,6 +185,23 @@ int main()
     messageText.setPosition(1920 / 2.5f, 1080 / 2.5f);
     scoreText.setPosition(20, 20);
 
+    // Prepare the 5 branches 
+    // Create an object of the Texture type called textureBranch 
+    Texture textureBranch;
+
+    // Load the branch graphic into the texture
+    textureBranch.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/branch.png");
+
+    // Set the texture for each branch sprite
+    for(int i = 0; i < NUM_BRANCHES; i++) {
+        branches[i].setTexture(textureBranch);
+        branches[i].setPosition( -2000, -2000);
+
+        // Set the sprite's position to the center of the screen
+        // The branch sprite can be spun around without changing the position
+        branches[i].setOrigin(220, 20);
+    }
+
     // Main game loop
     while (window.isOpen())
     {
@@ -355,6 +372,33 @@ int main()
         std::stringstream ss;
         ss << "Score = " << score;
         scoreText.setString(ss.str());
+
+        // Update the branch sprites 
+        for (int i = 0; i < NUM_BRANCHES; i++) {
+            float height = i * 150; // First branch will have a height of 0 and the sixth will have a height of 750
+
+            if (branchPositions[i] == side::LEFT) 
+            {
+                // Move the sprite to the left side 
+                branches[i].setPosition(610, height);
+
+                // Flip the sprite around
+                branches[i].setRotation(180);
+            }
+            else if (branchPositions[i] == side::RIGHT)
+            {
+                // Move the sprite to the right side
+                branches[i].setPosition(1330, height);
+
+                // Set the sprite rotation to normal
+                branches[i].setRotation(0);
+            }
+            else 
+            {
+                // Hide the branch 
+                branches[i].setPosition(3000, height);
+            }
+        } // End if(!paused)
 
         // Draw the scene
 
