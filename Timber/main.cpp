@@ -236,6 +236,9 @@ int main()
     spritePlayer.setTexture(texturePlayer);
     //Set the sprite's position
     spritePlayer.setPosition(580, 720);
+    
+    // The player starts on the left
+    side playerSide = side::LEFT;
 
     // Prepare the axe 
     Texture textureAxe;
@@ -295,6 +298,63 @@ int main()
             spritePlayer.setPosition(500, 720);
 
             acceptInput = true;
+        }
+
+        // Wrap the player controls to
+        // Make sure we are accepting input 
+        if (acceptInput) 
+        {
+            // More code here next...
+
+            // First handle pressing the right cursor key
+            if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Right) 
+            {
+                playerSide = side::RIGHT;
+
+                score ++;
+
+                // Add to the amount of time remaining
+                timeRemaining += (2 / score) + .15;
+
+                spriteAxe.setPosition(AXE_POSITION_RIGHT, spriteAxe.getPosition().y);
+
+                spritePlayer.setPosition(1200, 720);
+
+                // Update the branches
+                updateBranches(score);
+
+                // Set the log flying to the left
+                spriteLog.setPosition(810, 720);
+                logSpeedX = -5000;
+                logSpeedY = true;
+
+                acceptInput = false;
+            }
+            
+            // Handle the left cursor key
+            if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Left)
+            {
+                playerSide = side::LEFT;
+
+                score ++;
+
+                // Add to the amount of time remaining
+                timeRemaining += (2 / score) + .15;
+
+                spriteAxe.setPosition(AXE_POSITION_LEFT, spriteAxe.getPosition().y);
+
+                spritePlayer.setPosition(580, 720);
+
+                // Update the branches
+                updateBranches(score);
+
+                // Set the log flying
+                spriteLog.setPosition(810, 720);
+                logSpeedX = 5000;
+                logSpeedY = true;
+
+                acceptInput = false;
+            }
         }
 
         // Update the scene
