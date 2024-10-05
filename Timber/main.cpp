@@ -225,6 +225,43 @@ int main()
         branches[i].setOrigin(220, 20);
     }
 
+    // Prepare the player 
+    Texture texturePlayer;
+    // Load the player graphic into the texture 
+    texturePlayer.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/player.png");
+    // Create a sprite 
+    Sprite spritePlayer;
+    // Set the texture to the sprite
+    spritePlayer.setTexture(texturePlayer);
+    //Set the sprite's position
+    spritePlayer.setPosition(580, 720);
+
+    // Prepare the axe 
+    Texture textureAxe;
+    textureAxe.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/axe.png");
+
+    Sprite spriteAxe;
+    spriteAxe.setTexture(textureAxe);
+
+    spriteAxe.setPosition(700, 830);
+
+    // Line the axe up with the tree
+    const float AXE_POSITION_LEFT = 700;
+    const float AXE_POSITION_RIGHT = 1075;
+
+    // Prepare the flying log
+    Texture textureLog;
+    textureLog.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/log.png");
+    Sprite spriteLog;
+    spriteLog.setTexture(textureLog);
+    spriteLog.setPosition(810, 720);
+
+    // Some other useful log related variable 
+    bool logActive = false;
+    float logSpeedX = 1000;
+    float logSpeedY = -1500;
+
+
     // Main game loop
     while (window.isOpen())
     {
@@ -444,6 +481,15 @@ int main()
 
         // Draw the tree
         window.draw(spriteTree);
+
+        // Draw the player
+        window.draw(spritePlayer);
+
+        // Draw the axe 
+        window.draw(spriteAxe);
+
+        // Draw the log 
+        window.draw(spriteLog);
 
         // Draw the bee
         window.draw(spriteBee);
