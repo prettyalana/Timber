@@ -175,6 +175,7 @@ int main()
     // SFML Text object
     Text messageText;
     Text scoreText;
+    Text gameOverText;
 
     // Choose a font
     Font font;
@@ -222,7 +223,7 @@ int main()
 
         // Set the sprite's position to the center of the screen
         // The branch sprite can be spun around without changing the position
-        branches[i].setOrigin(220, 20);
+        branches[i].setOrigin(100, 10);
     }
 
     // Prepare the player 
@@ -261,6 +262,7 @@ int main()
     float logSpeedX = 1000;
     float logSpeedY = -1500;
 
+    bool acceptInput = false;
 
     // Main game loop
     while (window.isOpen())
@@ -270,6 +272,7 @@ int main()
         {
             // Handle the player input
             if (event.type == Event::Closed || event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape)
+                
                 window.close();
         }
 
@@ -281,6 +284,17 @@ int main()
             // Reset the time and the score
             score = 0;
             timeRemaining = 6;
+
+            // Make all the branches disappear 
+            for (int i = 1; i < NUM_BRANCHES; i++ ) 
+            {
+                branchPositions[i] = side::NONE;
+            }
+
+            // Move the player into position
+            spritePlayer.setPosition(500, 720);
+
+            acceptInput = true;
         }
 
         // Update the scene
