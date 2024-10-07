@@ -270,13 +270,26 @@ int main()
     // Main game loop
     while (window.isOpen())
     {
+        // Declare an object of type Event called event
         Event event;
-        while (window.pollEvent(event))
+        while (window.pollEvent(event)) // Call the window.pollEvent function and pass in the new object, event
         {
-            // Handle the player input
+
+            if (event.type == Event::KeyReleased && !paused)
+            {
+                // Listen for key presses again
+                acceptInput = true; 
+
+                // hide the axe 
+                spriteAxe.setPosition(2000,
+                    spriteAxe.getPosition().y);
+            }
+
+            // Handle the player's input
             if (event.type == Event::Closed || event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape)
-                
+            {
                 window.close();
+            }
         }
 
         // Start the game
