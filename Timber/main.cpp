@@ -371,12 +371,12 @@ int main()
         }
 
         // Update the scene
-
+        Time dt;
         if (!paused)
         {
             // Measure time
             // Declare an object of the Time type and name it dt and use it to store the value returned by the clock.restart() function
-            Time dt = clock.restart();
+            dt = clock.restart();
 
             // Subtract from the amount of time remaining
             timeRemaining -= dt.asSeconds();
@@ -545,7 +545,33 @@ int main()
                 // Hide the branch 
                 branches[i].setPosition(3000, height);
             }
-        } // End if(!paused)
+        } 
+        
+        // Handle a flying log
+        if (logActive) 
+        {
+            spriteLog.setPosition(
+                spriteLog.getPosition().x +
+                (logSpeedX * dt.asSeconds()),
+
+                spriteLog.getPosition().y +
+                (logSpeedY * dt.asSeconds())
+            );
+
+            // Has the log reached the right side?
+            if (spriteLog.getPosition().x < -100 ||
+                spriteLog.getPosition().y > 2000)
+            {
+                // Set it ready to be a new log next frame 
+                logActive = false;
+                spriteLog.setPosition(810, 720);
+            }
+        }
+        
+        
+        // End if(!paused)
+
+
 
         // Draw the scene
 
