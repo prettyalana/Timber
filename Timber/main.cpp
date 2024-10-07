@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <SFML/Audio.hpp>
 
 // Make code easier to type with "using namespace";
 using namespace sf;
@@ -63,6 +64,23 @@ const float TREE_VERTICAL_POSITION = -200;
 int main()
 // This is where the game starts from int main()
 {
+    // Prepare the sound
+    SoundBuffer chopBuffer;
+    chopBuffer.loadFromFile("/Users/alana/alana-fullstackdev/Timber/sounds/chop.wav");
+    Sound chop;
+    chop.setBuffer(chopBuffer);
+
+    SoundBuffer gameOverBuffer;
+    gameOverBuffer.loadFromFile("/Users/alana/alana-fullstackdev/Timber/sounds/death.wav");
+    Sound gameOver;
+    gameOver.setBuffer(gameOverBuffer);
+
+    // Out of time 
+    SoundBuffer ootBuffer;
+    ootBuffer.loadFromFile("/Users/alana/alana-fullstackdev/Timber/sounds/out_of_time.wav");
+    Sound outOfTime;
+    outOfTime.setBuffer(ootBuffer);
+
     // Create a video mode object
     VideoMode vm(VideoMode::getDesktopMode()); // Fullscreen mode
 
@@ -342,6 +360,9 @@ int main()
                 logSpeedY = true;
 
                 acceptInput = false;
+
+                // Play a chop sound
+                chop.play();
             }
             
             // Handle the left cursor key
@@ -367,6 +388,9 @@ int main()
                 logSpeedY = true;
 
                 acceptInput = false;
+
+                // Play a chop sound
+                chop.play();
             }
         }
 
@@ -396,9 +420,15 @@ int main()
 
                 // Reposition the text based on the new size
                 FloatRect textRect = messageText.getLocalBounds();
-                messageText.setOrigin(textRect.left + textRect.width / 2.0f,
-                                      textRect.top +
-                                          textRect.height / 2.0f);
+                messageText.setOrigin(textRect.left + 
+                textRect.width / 2.0f,
+                textRect.top +
+                textRect.height / 2.0f);
+
+                messageText.setPosition(1440 / 2.0f, 900 / 2.0f);
+
+                // Play the out of time sound
+                outOfTime.play();
             }
 
             // Setup the bee
@@ -590,6 +620,8 @@ int main()
 
             messageText.setPosition(1440 / 2.0f,
             900 / 2.0f);
+
+            gameOver.play();
         }
         
         // End if(!paused)
