@@ -568,6 +568,29 @@ int main()
             }
         }
         
+        // Has the player been hit by a branch?
+        if (branchPositions[5] == playerSide)
+        {
+            // Game over 
+            paused = true; 
+            acceptInput = false;
+
+            // Hide the player
+            spritePlayer.setPosition(2000, 600);
+
+            // Change the text of message
+            messageText.setString("GAME OVER!!");
+
+            // Center it on screen
+            FloatRect textRect = messageText.getLocalBounds();
+
+            messageText.setOrigin(textRect.left + 
+            textRect.width / 2.0f, 
+            textRect.top + textRect.height / 2.0f);
+
+            messageText.setPosition(1440 / 2.0f,
+            900 / 2.0f);
+        }
         
         // End if(!paused)
 
