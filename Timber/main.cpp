@@ -455,86 +455,86 @@ int main()
 
             // Manage the clouds
             // Cloud 1
-            if (!cloud1Active)
+            if (!cloudsActive[0])
             {
                 // How fast is the cloud moving?
                 srand((int)time(0) * 10); // * 10 to the result returned by time(0) ensures we always get a different seed for each of the clouds
-                cloud1Speed = (rand() % 200);
+                cloudSpeeds[0] = (rand() % 200);
 
                 // How high is the cloud?
                 srand((int)time(0) * 10);
                 float height = (rand() % 150);
-                spriteCloud1.setPosition(-200, height);
-                cloud1Active = true;
+                clouds[0].setPosition(-200, height);
+                cloudsActive[0] = true;
             }
             else
             {
                 // Move the cloud
-                spriteCloud1.setPosition(
-                    spriteCloud1.getPosition().x +
-                        (cloud1Speed * dt.asSeconds()),
-                    spriteCloud1.getPosition().y);
+                clouds[0].setPosition(
+                    clouds[0].getPosition().x +
+                        (cloudSpeeds[0] * dt.asSeconds()),
+                    clouds[0].getPosition().y);
 
                 // Has the cloud reached the right-hand edge of the screen?
-                if (spriteCloud1.getPosition().x > 1920)
+                if (clouds[0].getPosition().x > 1920)
                 {
-                    cloud1Active = false;
+                    cloudsActive[0] = false;
                 }
             }
 
             // Cloud 2
-            if (!cloud2Active)
+            if (!cloudsActive[1])
             {
                 // How fast is the cloud moving?
                 srand((int)time(0) * 20);
-                cloud2Speed = (rand() % 200);
+                cloudSpeeds[1] = (rand() % 200);
 
                 // How high is the cloud?
                 srand((int)time(0) * 20);
                 float height = (rand() % 300) - 150;
-                spriteCloud2.setPosition(-200, height);
-                cloud2Active = true;
+                clouds[1].setPosition(-200, height);
+                cloudsActive[1] = true;
             }
             else
             {
                 // Move the cloud
-                spriteCloud2.setPosition(
-                    spriteCloud2.getPosition().x +
-                        (cloud2Speed * dt.asSeconds()),
-                    spriteCloud2.getPosition().y);
+                clouds[1].setPosition(
+                    clouds[1].getPosition().x +
+                        (cloudSpeeds[1] * dt.asSeconds()),
+                    clouds[1].getPosition().y);
 
                 // Has the cloud reached the left-hand edge of the screen?
-                if (spriteCloud2.getPosition().x > 1920)
+                if (clouds[1].getPosition().x > 1920)
                 {
-                    cloud2Active = false;
+                    cloudsActive[1] = false;
                 }
             }
 
             // Cloud 3
-            if (!cloud3Active)
+            if (!cloudsActive[2])
             {
                 // How fast is the cloud moving?
                 srand((int)time(0) * 30); // * 10 to the result returned by time(0) ensures we always get a different seed for each of the clouds
-                cloud3Speed = (rand() % 200);
+                cloudSpeeds[2] = (rand() % 200);
 
                 // How high is the cloud?
                 srand((int)time(0) * 30);
                 float height = (rand() % 450) - 150;
-                spriteCloud3.setPosition(-200, height);
-                cloud3Active = true;
+                clouds[2].setPosition(-200, height);
+                cloudsActive[2] = true;
             }
             else
             {
                 // Move the cloud
-                spriteCloud3.setPosition(
-                    spriteCloud3.getPosition().x +
-                        (cloud3Speed * dt.asSeconds()),
-                    spriteCloud3.getPosition().y);
+                clouds[2].setPosition(
+                    clouds[2].getPosition().x +
+                        (cloudSpeeds[2] * dt.asSeconds()),
+                    clouds[2].getPosition().y);
 
                 // Has the cloud reached the left-hand edge of the screen?
-                if (spriteCloud3.getPosition().x > 1920)
+                if (clouds[2].getPosition().x > 1920)
                 {
-                    cloud3Active = false;
+                    cloudsActive[2] = false;
                 }
             }
         } // End if(!paused)
@@ -631,9 +631,9 @@ int main()
         window.draw(spriteBackground);
 
         // Draw the clouds
-        window.draw(spriteCloud1);
-        window.draw(spriteCloud2);
-        window.draw(spriteCloud3);
+        window.draw(clouds[0]);
+        window.draw(clouds[1]);
+        window.draw(clouds[2]);
 
         // Draw the branches 
         for (int i = 0; i < NUM_BRANCHES; i++) 
