@@ -19,41 +19,48 @@ using namespace std;
 // Declare a constant int called NUM_BRANCHES and set the value to 6
 const int NUM_BRANCHES = 6;
 
-// Declare an array of Sprite objects called branches 
+// Declare an array of Sprite objects called branches
 Sprite branches[NUM_BRANCHES]; // Stores 6 values
 
 // Where is the player/branch?
 // Left or Right
 // Declare an enum called side with three possible values
-enum class side {LEFT, RIGHT, NONE};
+enum class side
+{
+    LEFT,
+    RIGHT,
+    NONE
+};
 
-// initialize an array of sideTypes that stores 6 values 
+// initialize an array of sideTypes that stores 6 values
 // Each value is the type side and can be hold the values LEFT, RIGHT, or NONE
-side branchPositions[NUM_BRANCHES]; 
+side branchPositions[NUM_BRANCHES];
 
 // Function declaration
 void updateBranches(int seed)
 {
     // Move all the branches down one place
-    for(int j = NUM_BRANCHES - 1; j > 0; j--) {
+    for (int j = NUM_BRANCHES - 1; j > 0; j--)
+    {
         branchPositions[j] = branchPositions[j - 1];
     }
 
     // Spawn a new branch at position 0
     // LEFT, RIGHT, or NONE
-    srand((int)time(0)+seed);
+    srand((int)time(0) + seed);
     int r = (rand() % 5);
 
-    switch(r) {
-        case 0:
-            branchPositions[0] = side::LEFT;
-            break;
-        case 1: 
-            branchPositions[1] = side::RIGHT;
-            break;
-        default:
-            branchPositions[0] = side::NONE;
-            break;
+    switch (r)
+    {
+    case 0:
+        branchPositions[0] = side::LEFT;
+        break;
+    case 1:
+        branchPositions[1] = side::RIGHT;
+        break;
+    default:
+        branchPositions[0] = side::NONE;
+        break;
     }
 }
 
@@ -75,7 +82,7 @@ int main()
     Sound gameOver;
     gameOver.setBuffer(gameOverBuffer);
 
-    // Out of time 
+    // Out of time
     SoundBuffer ootBuffer;
     ootBuffer.loadFromFile("/Users/alana/alana-fullstackdev/Timber/sounds/out_of_time.wav");
     Sound outOfTime;
@@ -134,7 +141,6 @@ int main()
     // How fast can the bee fly
     float beeSpeed = 0.0f;
 
-
     // Declare a constant int called NUM_CLOUDS and set the value to 3
     const int NUM_CLOUDS = 3;
 
@@ -155,7 +161,8 @@ int main()
         return -1;
     }
 
-    for (int i = 0; i < NUM_CLOUDS; i++ ) {
+    for (int i = 0; i < NUM_CLOUDS; i++)
+    {
         clouds[i].setTexture(textureCloud);
         clouds[i].setPosition(-300, i * 150);
         cloudsActive[i] = false;
@@ -221,38 +228,39 @@ int main()
     messageText.setPosition(1920 / 2.5f, 1080 / 2.5f);
     scoreText.setPosition(20, 20);
 
-    // Prepare the 5 branches 
-    // Create an object of the Texture type called textureBranch 
+    // Prepare the 5 branches
+    // Create an object of the Texture type called textureBranch
     Texture textureBranch;
 
     // Load the branch graphic into the texture
     textureBranch.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/branch.png");
 
     // Set the texture for each branch sprite
-    for(int i = 0; i < NUM_BRANCHES; i++) {
+    for (int i = 0; i < NUM_BRANCHES; i++)
+    {
         branches[i].setTexture(textureBranch);
-        branches[i].setPosition( -2000, -2000);
+        branches[i].setPosition(-2000, -2000);
 
         // Set the sprite's position to the center of the screen
         // The branch sprite can be spun around without changing the position
         branches[i].setOrigin(100, 10);
     }
 
-    // Prepare the player 
+    // Prepare the player
     Texture texturePlayer;
-    // Load the player graphic into the texture 
+    // Load the player graphic into the texture
     texturePlayer.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/player.png");
-    // Create a sprite 
+    // Create a sprite
     Sprite spritePlayer;
     // Set the texture to the sprite
     spritePlayer.setTexture(texturePlayer);
-    //Set the sprite's position
+    // Set the sprite's position
     spritePlayer.setPosition(580, 720);
-    
+
     // The player starts on the left
     side playerSide = side::LEFT;
 
-    // Prepare the axe 
+    // Prepare the axe
     Texture textureAxe;
     textureAxe.loadFromFile("/Users/alana/alana-fullstackdev/Timber/graphics/axe.png");
 
@@ -272,7 +280,7 @@ int main()
     spriteLog.setTexture(textureLog);
     spriteLog.setPosition(810, 720);
 
-    // Some other useful log related variable 
+    // Some other useful log related variable
     bool logActive = false;
     float logSpeedX = 1000;
     float logSpeedY = -1500;
@@ -290,11 +298,11 @@ int main()
             if (event.type == Event::KeyReleased && !paused)
             {
                 // Listen for key presses again
-                acceptInput = true; 
+                acceptInput = true;
 
-                // hide the axe 
+                // hide the axe
                 spriteAxe.setPosition(2000,
-                    spriteAxe.getPosition().y);
+                                      spriteAxe.getPosition().y);
             }
 
             // Handle the player's input
@@ -313,8 +321,8 @@ int main()
             score = 0;
             timeRemaining = 6;
 
-            // Make all the branches disappear 
-            for (int i = 1; i < NUM_BRANCHES; i++ ) 
+            // Make all the branches disappear
+            for (int i = 1; i < NUM_BRANCHES; i++)
             {
                 branchPositions[i] = side::NONE;
             }
@@ -326,17 +334,17 @@ int main()
         }
 
         // Wrap the player controls to
-        // Make sure we are accepting input 
-        if (acceptInput) 
+        // Make sure we are accepting input
+        if (acceptInput)
         {
             // More code here next...
 
             // First handle pressing the right cursor key
-            if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Right) 
+            if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Right)
             {
                 playerSide = side::RIGHT;
 
-                score ++;
+                score++;
 
                 // Add to the amount of time remaining
                 timeRemaining += (2 / score) + .15;
@@ -358,13 +366,13 @@ int main()
                 // Play a chop sound
                 chop.play();
             }
-            
+
             // Handle the left cursor key
             if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Left)
             {
                 playerSide = side::LEFT;
 
-                score ++;
+                score++;
 
                 // Add to the amount of time remaining
                 timeRemaining += (2 / score) + .15;
@@ -414,10 +422,10 @@ int main()
 
                 // Reposition the text based on the new size
                 FloatRect textRect = messageText.getLocalBounds();
-                messageText.setOrigin(textRect.left + 
-                textRect.width / 2.0f,
-                textRect.top +
-                textRect.height / 2.0f);
+                messageText.setOrigin(textRect.left +
+                                          textRect.width / 2.0f,
+                                      textRect.top +
+                                          textRect.height / 2.0f);
 
                 messageText.setPosition(1440 / 2.0f, 900 / 2.0f);
 
@@ -544,13 +552,14 @@ int main()
         ss << "Score = " << score;
         scoreText.setString(ss.str());
 
-        // Update the branch sprites 
-        for (int i = 0; i < NUM_BRANCHES; i++) {
+        // Update the branch sprites
+        for (int i = 0; i < NUM_BRANCHES; i++)
+        {
             float height = i * 150; // First branch will have a height of 0 and the sixth will have a height of 750
 
-            if (branchPositions[i] == side::LEFT) 
+            if (branchPositions[i] == side::LEFT)
             {
-                // Move the sprite to the left side 
+                // Move the sprite to the left side
                 branches[i].setPosition(610, height);
 
                 // Flip the sprite around
@@ -564,39 +573,38 @@ int main()
                 // Set the sprite rotation to normal
                 branches[i].setRotation(0);
             }
-            else 
+            else
             {
-                // Hide the branch 
+                // Hide the branch
                 branches[i].setPosition(3000, height);
             }
-        } 
-        
+        }
+
         // Handle a flying log
-        if (logActive) 
+        if (logActive)
         {
             spriteLog.setPosition(
                 spriteLog.getPosition().x +
-                (logSpeedX * dt.asSeconds()),
+                    (logSpeedX * dt.asSeconds()),
 
                 spriteLog.getPosition().y +
-                (logSpeedY * dt.asSeconds())
-            );
+                    (logSpeedY * dt.asSeconds()));
 
             // Has the log reached the right side?
             if (spriteLog.getPosition().x < -100 ||
                 spriteLog.getPosition().y > 2000)
             {
-                // Set it ready to be a new log next frame 
+                // Set it ready to be a new log next frame
                 logActive = false;
                 spriteLog.setPosition(810, 720);
             }
         }
-        
+
         // Has the player been hit by a branch?
-        if (branchPositions[5] == playerSide)
+        if (branchPositions[5] == playerSide && !paused) // Add a check to ensure the game isn't paused
         {
-            // Game over 
-            paused = true; 
+            // Game over logic
+            paused = true;
             acceptInput = false;
 
             // Hide the player
@@ -607,13 +615,9 @@ int main()
 
             // Center it on screen
             FloatRect textRect = messageText.getLocalBounds();
-
-            messageText.setOrigin(textRect.left + 
-            textRect.width / 2.0f, 
-            textRect.top + textRect.height / 2.0f);
-
-            messageText.setPosition(1440 / 2.0f,
-            900 / 2.0f);
+            messageText.setOrigin(textRect.left + textRect.width / 2.0f,
+                                  textRect.top + textRect.height / 2.0f);
+            messageText.setPosition(1440 / 2.0f, 900 / 2.0f);
 
             gameOver.play();
         }
@@ -635,8 +639,8 @@ int main()
         window.draw(clouds[1]);
         window.draw(clouds[2]);
 
-        // Draw the branches 
-        for (int i = 0; i < NUM_BRANCHES; i++) 
+        // Draw the branches
+        for (int i = 0; i < NUM_BRANCHES; i++)
         {
             window.draw(branches[i]);
         }
@@ -647,10 +651,10 @@ int main()
         // Draw the player
         window.draw(spritePlayer);
 
-        // Draw the axe 
+        // Draw the axe
         window.draw(spriteAxe);
 
-        // Draw the log 
+        // Draw the log
         window.draw(spriteLog);
 
         // Draw the bee

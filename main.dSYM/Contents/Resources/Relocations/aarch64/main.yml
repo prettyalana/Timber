@@ -1,5 +1,5 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/alana/alana-fullstackdev/Timber/main'
+binary-path:     '/Users/alana/alana-fullstackdev/CPP/Timber/main'
 relocations:     []
 ...
